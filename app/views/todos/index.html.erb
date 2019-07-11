@@ -1,0 +1,13 @@
+<section class="container">
+<h1> Home </h1>
+<% @todos.each do |todo| %>
+      <div class="card-body">
+        <h2> <%= todo.description %> </h2>
+        <%= todo.completed%>
+        <%= link_to 'Show', todo, class:'btn btn-primary' %>
+        <%= link_to 'Edit', editing_path(todo), class:'btn btn-primary' %>
+        <%= link_to 'Delete', todo, method: :delete, data: { confirm: "This action can't be undo" },class:'btn btn-primary' %>
+        <%= link_to 'Complete', completed_path(todo), class:'btn btn-primary' %>
+       </div>
+<% end %>
+</section>

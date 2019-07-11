@@ -1,0 +1,12 @@
+<h1>SHOW</h1>
+<h2><strong>Content:</strong>
+  <%= @todo.description %>
+</h2>
+<h3><strong>Status:</strong>
+  <%= @todo.completed %>
+</h3>
+
+<p>
+    <%= link_to 'Edit', editing_path(@todo), class:'btn btn-primary' %>
+    <strong>||</strong>
+    <%= link_to 'Back', todos_path , class:'btn btn-danger' %></p>

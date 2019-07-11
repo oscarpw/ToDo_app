@@ -1,0 +1,7 @@
+<h1>Tareas completadas</h1>
+<% @completed.each do |task| %>
+    <p<%= task.description %> </p>
+<% end %>
+<% @to_complete.each do |task| %>
+    <p> <%= task.description %> </p>
+<% end %>
