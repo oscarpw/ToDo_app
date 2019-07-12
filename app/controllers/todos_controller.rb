@@ -35,8 +35,15 @@ class TodosController < ApplicationController
 
      def complete
         @todo = Todo.find(params[:id])
-        @todo.update_attribute(:completed, true)
-        redirect_to todos_path
+          if @todo.completed == true
+              @todo.completed = false
+              @todo.save
+              redirect_to todos_path
+          else
+              @todo.completed = true
+              @todo.save
+              redirect_to todos_path
+          end
      end
 
      def list

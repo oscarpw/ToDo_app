@@ -9,10 +9,13 @@
                 <div class="card">
                     <div class="card-body">
                         <h2>Description: <%= todo.description %> </h2>
-                        <h4>Status: <%= todo.completed%></h4>
-                        <%= link_to 'Show', todo, class:'btn btn-primary' %>
-                        <%= link_to 'Edit', edit_todo_path(todo), class:'btn btn-primary' %>
+                        <h4>Status: <%= todo.completed %></h4>
+                        <%= link_to 'Show', todo %>
+                        <strong>  |  </strong>
+                        <%= link_to 'Edit', edit_todo_path(todo) %>
+                        <strong>  |  </strong>
                         <%= link_to 'Delete', todo, method: :delete, data: { confirm: "This action can't be undo" },class:'btn btn-danger' %>
+                        <strong>  |  </strong>
                         <%= link_to 'Complete', complete_todo_path(todo), class:'btn btn-primary' %>
                     </div>
                 </div>
