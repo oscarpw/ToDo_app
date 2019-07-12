@@ -16,7 +16,7 @@
                         <strong>  |  </strong>
                         <%= link_to 'Delete', todo, method: :delete, data: { confirm: "This action can't be undo" },class:'btn btn-danger' %>
                         <strong>  |  </strong>
-                        <%= link_to 'Complete', complete_todo_path(todo), class:'btn btn-primary' %>
+                        <%= link_to 'Complete', complete_todo_path(todo), method: :post, class:'btn btn-primary' %>
                     </div>
                 </div>
                 <% end %>
