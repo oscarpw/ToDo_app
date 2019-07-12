@@ -1,13 +1,23 @@
 <section class="container">
-<h1> Home </h1>
-<% @todos.each do |todo| %>
-      <div class="card-body">
-        <h2> <%= todo.description %> </h2>
-        <%= todo.completed%>
-        <%= link_to 'Show', todo, class:'btn btn-primary' %>
-        <%= link_to 'Edit', editing_path(todo), class:'btn btn-primary' %>
-        <%= link_to 'Delete', todo, method: :delete, data: { confirm: "This action can't be undo" },class:'btn btn-primary' %>
-        <%= link_to 'Complete', completed_path(todo), class:'btn btn-primary' %>
-       </div>
-<% end %>
+    <h1> ToDo List - Rails Exam G21</h1>
+    <h3>Add a new task for your 'ToDo List'</h3>
+    <p><%= link_to 'Add Here', todos_new_path, class: 'btn btn-primary' %></p>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <% @todos.each do |todo| %>
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Description: <%= todo.description %> </h2>
+                        <h4>Status: <%= todo.completed%></h4>
+                        <%= link_to 'Show', todo, class:'btn btn-primary' %>
+                        <%= link_to 'Edit', edit_todo_path(todo), class:'btn btn-primary' %>
+                        <%= link_to 'Delete', todo, method: :delete, data: { confirm: "This action can't be undo" },class:'btn btn-danger' %>
+                        <%= link_to 'Complete', complete_todo_path(todo), class:'btn btn-primary' %>
+                    </div>
+                </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
 </section>

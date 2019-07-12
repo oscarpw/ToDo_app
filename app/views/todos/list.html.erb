@@ -1,7 +1,20 @@
-<h1>Tareas completadas</h1>
-<% @completed.each do |task| %>
-    <p<%= task.description %> </p>
-<% end %>
-<% @to_complete.each do |task| %>
-    <p> <%= task.description %> </p>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+        <h2>Complete Task</h2>
+    <% @todos.each do |t| %>
+        <% if t.completed == true %>
+          <p><%= t.description %></p>
+        <% end %>
+    <% end %>
+    </div>
+    <div class="col-6">
+        <h2>Incomplete task</h2>
+        <% @todos.each do |i| %>
+            <% if i.completed == false %>
+              <p><%= i.description %></p>
+            <% end %>
+        <% end %>
+    </div>
+  </div>
+</div>

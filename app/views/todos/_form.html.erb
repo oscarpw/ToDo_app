@@ -2,7 +2,7 @@
  <%= f.label :title, "Description" %>
  <%= f.text_area :description %>
  <%= f.label :estado, "Completed" %>
- <%= f.button :completed%>
+ <%= f.check_box :completed%>
  <%= f.submit "Save" %>
  <%= link_to 'Back', todos_path , class:'btn btn-danger' %>
 <% end %>
